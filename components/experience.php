@@ -1,24 +1,37 @@
-<section class="Testimonials section" id="testimonials">
-    <h2 class="section-title">Experience</h2>
+<section class="Experience section" id="experience">
+    <h2 class="section-title">Kinh nghiệm làm việc</h2>
 
-    <div class="testimonials__container bd-grid">
+    <div class="experience__container bd-grid">
 
-        <a href="" class="testimonials__img"> <img src="assets/img/testi1.png" alt="" class="testimonials__img"><br><br></a>
         <div>
-            <p>We re-did our website twice in a 12 month period. There was no comparison between the first company and Marlon. Professional, Creative, Attentive to Detail, Excellent Communication…If I had contracted with Marlon the first time I would not have had to do it twice.</p>
-            <h3 class="testimonials__sign">― By David.H</h3>
+            <div>
+                <h2 class="experience__sign">― Mindx School</h2>
+                <h4>Vị trí: Giảng Viên</h4>
+                <p>
+                    - Giảng dạy khối Kid
+                </p>
+                <br>
+                <p>
+                    - Giảng dạy, hướng dẫn học sinh độ tuổi 9 - 16 lập trình các tựa game hoặc web site bằng các công cụ hỗ trợ: Scratch, Game Maker. HTML, CSS, JS.
+                </p>
+                <br>
+            </div>
+
+            <div>
+                <h2 class="experience__sign">― ABI STUDIO GAME</h2>
+                <h4>Vị trí: Thực tập sinh Back End</h4>
+                <p>
+                    - Qua quá trình thực tập nắm bắt được cách làm việc
+                </p>
+                <br>
+                <p>
+                    - Học hỏi được một số kiến thức mới: Graphql, NestJs, ...
+                </p>
+                <br>
+            </div>
         </div>
-
-        <a href="" class="testimonials__img"> <img src="assets/img/testi2.png" alt="" class="testimonials__img"><br><br></a>
         <div>
-            <p>Marlon listened to everything we needed and wanted in a new website, then delivered it! Our new website is fun, exciting and easy to use for me and our audiences. I have gone through website redesigns before, and by far, this one was the easiest and least painful. I was listened to and respected through every step. We couldn’t be happier with our new website.</p>
-            <h3 class="testimonials__sign">― By Cathy.O</h3>
-        </div>
-
-        <a href="" class="testimonials__img"> <img src="assets/img/testi3.png" alt="" class="testimonials__img"></a>
-        <div>
-            <p>Our site is beautiful! It is easy to navigate. The support has been remarkable for WordPress, if I don’t understand something, or can’t accomplish a task, Marlon is very responsive and him lead me in the correct way. Marlon is an extremely talented Web Designer.</p>
-            <h3 class="testimonials__sign">― By Libby.B</h3>
+            <img src="assets/code.png" alt="experience">
         </div>
 
     </div>

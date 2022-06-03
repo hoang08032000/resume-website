@@ -1,6 +1,6 @@
 <section class="home bd-grid" id="home">
     <div class="home__data">
-        <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Marlon</span><br> Web Designer</h1>
+        <h2 class="home__title">Xin chào,<br>Mình là <span class="home__title-color">Hoàng</span><br> Backend Development </h2>
 
         <a href="#" class="button">Mail me</a>
     </div>
@@ -12,7 +12,7 @@
     </div>
 
     <div class="home__img">
-        <img src="assets/img/perfil.png" alt="home__img">
+        <img src="assets/Perry_the_Platypus.png" alt="home__img">
 
     </div>
 </section>

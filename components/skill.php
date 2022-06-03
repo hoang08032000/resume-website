@@ -1,10 +1,10 @@
 <section class="skills section" id="skills">
-    <h2 class="section-title">Skills</h2>
+    <h2 class="section-title">Các kỹ năng</h2>
 
     <div class="skills__container bd-grid">
         <div>
-            <h2 class="skills__subtitle">Profesional Skills</h2>
-            <p class="skills__text">As a web designer, my objective is to make a positive impact on clients, co-workers, and the Internet using my skills and experience to design compelling and attractive websites.</p>
+            <!-- <h2 class="skills__subtitle">Profesional Skills</h2>
+            <p class="skills__text">As a web designer, my objective is to make a positive impact on clients, co-workers, and the Internet using my skills and experience to design compelling and attractive websites.</p> -->
             <div class="skills__data">
                 <div class="skills__names">
                     <i class='bx bxl-html5 skills__icon'></i>
@@ -14,7 +14,7 @@
 
                 </div>
                 <div>
-                    <span class="skills__percentage">95%</span>
+                    <span class="skills__percentage">70%</span>
                 </div>
             </div>
             <div class="skills__data">
@@ -56,7 +56,7 @@
         </div>
 
         <div>
-            <img src="assets/img/skills.jpg" alt="" class="skills__img">
+            <img src="assets/skills.jpg" alt="" class="skills__img">
         </div>
     </div>
 </section>
