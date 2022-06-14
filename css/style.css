@@ -62,7 +62,12 @@ ul {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+  color: #fff;
+}
+
+a:hover{
+  color: #fff;
 }
 
 img {
@@ -563,4 +568,27 @@ img {
     display: flex;
     justify-content: flex-end;
   }
+}
+
+.profile h3 {
+  text-align: center;
+}
+
+.profile a {
+  text-decoration: none;
+  color: #0d1730;
+}
+
+.header-title {
+  text-align: center;
+}
+.btn-add{
+  text-align: end;
+}
+.btn-submit{
+  text-align: end;
+}
+
+i{
+  color: #0d1730;
 }

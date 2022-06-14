@@ -1,18 +1,29 @@
-<section class="home bd-grid" id="home">
-    <div class="home__data">
-        <h2 class="home__title">Xin chào,<br>Mình là <span class="home__title-color">Hoàng</span><br> Backend Development </h2>
-
-        <a href="#" class="button">Mail me</a>
+<div class="container home bd-grid">
+    <div class="row">
+        <div class="col">
+            <h1 class="header-title">Chào mừng đến với CV của chúng mình</h1>
+        </div>
     </div>
-
-    <div class="home__social">
-        <a href="" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-        <a href="" class="home__social-icon"><i class='bx bxl-facebook-circle'></i></a>
-        <a href="" class="home__social-icon"><i class='bx bxl-twitter'></i></a>
+    <div class="row">
+        <div class="col">
+            <div class="profile">
+                <h3><a href="#">Tô Việt Hoàng</a></h3>
+                <div class="profile-img">
+                    <a href="#">
+                        <img src="assets/code.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="profile">
+                <h3><a href="#">Tô Việt Hoàng</a></h3>
+                <div class="profile-img">
+                    <a href="#">
+                        <img src="assets/code.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="home__img">
-        <img src="assets/Perry_the_Platypus.png" alt="home__img">
-
-    </div>
-</section>
+</div>

@@ -47,7 +47,16 @@ if (isset($_GET['page'])) {
         unset($_SESSION['profile_session']);
 		echo "<script>window.open('index.php','_self')</script>";
     } else {
-        echo 'not thing here';
+        // echo 'not thing here';
+
+        // exam
+        include 'components/nav.php';
+        include 'components/home.php';
+        include 'components/about.php';
+        include 'components/education.php';
+        include 'components/experience.php';
+        include 'components/skill.php';
+        include 'components/fotter.php';
     }
     // if (!isset($_SESSION['profile_session'])) {
     //     // if($post == )
