@@ -1,5 +1,5 @@
 <?php
-include("connect_db.php");
+include("database.php");
 $page = '';
 if (isset($_GET['page'])) {
     $page = $_GET['page'];

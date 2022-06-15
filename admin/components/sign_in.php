@@ -1,14 +1,12 @@
 <?php
-include "connect_db.php";
+include "database.php";
 if (isset($_POST['signin'])) {
     $check = mysqli_query($connect, 'select * from admin where username = "' . $_POST['username'] . '" and password = "' . $_POST['password'] . '"');
     if (!mysqli_num_rows($check)) {
         $err = '<p style="color:#f00;">Email or password may be wrong! please try again.</p>';
     } else {
         $_SESSION['profile_session'] = $_POST['username'];
-        echo 'oke';
-        echo $_SESSION['profile_session'];
-        echo "<script>window.open('index.php?page=profile','_self')</script>";
+        echo "<script>window.open('index.php?page=home','_self')</script>";
     }
 }
 

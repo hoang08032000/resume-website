@@ -1,5 +1,5 @@
 <?php 
-    include 'connect_db.php';
+    include 'database.php';
 
     function sign_in_func(){
 

@@ -24,31 +24,26 @@ if (isset($_GET['page'])) {
 
 <body>
     <?php
-    // if (!$page) {
-    //     if (!isset($_SESSION['profile_session'])) {
-    //         include 'components/sign_in.php';
-    //     } else {
-    //         echo "<script>window.open('index.php','_self')</script>";
-    //     }
-    // } else {
-    //     echo 'admin page';
-    // }
-    include 'nav.php';
+    if (!$page) {
+        if (!isset($_SESSION['profile_session'])) {
+            include 'components/sign_in.php';
+        } else {
+            echo "<script>window.open('index.php?page=home','_self')</script>";
+        }
+    } elseif($page == 'home'){
+        include 'components/nav.php';
+        include 'components/list_cv.php';
+    } elseif($page == 'add-cv'){
+        include 'components/nav.php';
+        include 'components/form_cv.php';
+    } elseif($page == 'edit-cv'){
+        include 'components/nav.php';
+        include 'components/edit_cv.php';
+    } elseif($page == 'delete'){
+        include 'components/delete.php';
+    }
     // include 'list_cv.php';
-    include 'form_cv.php'
     ?>
-
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
-            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
-            toolbar_mode: 'floating',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-        });
-    </script>
-
 </body>
 
 </html>
