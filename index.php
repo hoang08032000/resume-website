@@ -1,8 +1,26 @@
 <?php
+
+require_once realpath("vendor/autoload.php");
+
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$db_host = getenv('DB_HOST');
+$db_name = getenv('DB_NAME');
+$db_user = getenv('DB_USER');
+$db_password = getenv('DB_PASSWORD');
+
+
+echo $db_host;
+
 include("database.php");
 $page = '';
+$id = '';
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
+    $id = $_GET['id'] ? $_GET['id'] : '';
 }
 ?>
 
@@ -24,44 +42,19 @@ if (isset($_GET['page'])) {
 
 <body>
     <?php
-    // echo $_SESSION['profile_session'];
-    if ($page == 'signin') {
-        if (!isset($_SESSION['profile_session'])) {
-            include 'components/sign_in.php';
-        } else {
-            echo "<script>window.open('index.php','_self')</script>";
-        }
-    } elseif ($page == 'profile') {
-        if (!isset($_SESSION['profile_session'])) {
-            include 'components/nav.php';
-            include 'components/home.php';
-            include 'components/about.php';
-            include 'components/education.php';
-            include 'components/experience.php';
-            include 'components/skill.php';
-            include 'components/fotter.php';
-        } else {
-            echo "<script>window.open('index.php','_self')</script>";
-        }
-    } elseif ($page == 'signout'){
-        unset($_SESSION['profile_session']);
-		echo "<script>window.open('index.php','_self')</script>";
-    } else {
-        // echo 'not thing here';
-
-        // exam
-        include 'components/nav.php';
+    if (($page == 'home' || !$page) && !$id) {
+        // include 'components/nav.php';
         include 'components/home.php';
+    } else {
+        include 'components/nav.php';
         include 'components/about.php';
         include 'components/education.php';
         include 'components/experience.php';
         include 'components/skill.php';
         include 'components/fotter.php';
     }
-    // if (!isset($_SESSION['profile_session'])) {
-    //     // if($post == )
-    // } else {
-    // }
+
+
     ?>
 
 

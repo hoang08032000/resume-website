@@ -1,34 +1,35 @@
+<?php
+include 'database.php';
+
+$user_id = $_GET['id'];
+
+$sql = 'SELECT * FROM experience WHERE user_id = "'.$user_id.'"';
+$exp = mysqli_query($connect, $sql);
+
+?>
+
 <section class="Experience section" id="experience">
     <h2 class="section-title">Kinh nghiệm làm việc</h2>
 
     <div class="experience__container bd-grid">
 
         <div>
+            <?php 
+            if(mysqli_num_rows($exp) > 0) {
+                foreach($exp as $row){
+            ?>
+            
             <div>
-                <h2 class="experience__sign">― Mindx School</h2>
-                <h4>Vị trí: Giảng Viên</h4>
-                <p>
-                    - Giảng dạy khối Kid
-                </p>
-                <br>
-                <p>
-                    - Giảng dạy, hướng dẫn học sinh độ tuổi 9 - 16 lập trình các tựa game hoặc web site bằng các công cụ hỗ trợ: Scratch, Game Maker. HTML, CSS, JS.
-                </p>
-                <br>
+                <h2 class="experience__sign">- Công ty: <?php echo $row['employer'] ?></h2>
+                <h5>Vị trí: <?php echo $row['title'] ?></h5>
+                <div style="padding: 0 10px;">
+                    <?php echo $row['description'] ?>
+                </div>
             </div>
-
-            <div>
-                <h2 class="experience__sign">― ABI STUDIO GAME</h2>
-                <h4>Vị trí: Thực tập sinh Back End</h4>
-                <p>
-                    - Qua quá trình thực tập nắm bắt được cách làm việc
-                </p>
-                <br>
-                <p>
-                    - Học hỏi được một số kiến thức mới: Graphql, NestJs, ...
-                </p>
-                <br>
-            </div>
+            <?php        
+                }
+            }
+            ?>
         </div>
         <div>
             <img src="assets/code.png" alt="experience">

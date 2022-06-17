@@ -9,16 +9,25 @@ if (isset($_POST['add-cv'])) {
     );
     $error = false;
 
+    if(!$_FILES['image'] || !$_FILES['image']['size'] || $_FILES['image']['error']) {
+        $error = true;
+    }
+
     foreach ($required as $field) {
         if (empty($_POST[$field])) {
             $error = true;
         }
     }
     if (!$error) {
+        $file_tmp= $_FILES['image']['tmp_name'];
+        $data = file_get_contents($$file_tmp);
+
+        $base64 = 'data:image/png;base64,' . base64_encode($data) ;
+
         $sql_user = mysqli_query(
             $connect,
-            'INSERT INTO user (first_name, last_name, email, phone, address)
-        VALUES ("' . $_POST['firstname'] . '", "' . $_POST['lastname'] . '", "' . $_POST['email'] . '", "' . $_POST['phone'] . '", "' . $_POST['address'] . '" )'
+            'INSERT INTO user (first_name, last_name, email, phone, address, image)
+        VALUES ("' . $_POST['firstname'] . '", "' . $_POST['lastname'] . '", "' . $_POST['email'] . '", "' . $_POST['phone'] . '", "' . $_POST['address'] . '", "'.$base64.'" )'
         );
         if ($sql_user) {
             $user = mysqli_fetch_array(mysqli_query($connect, 'SELECT * FROM user ORDER BY id DESC LIMIT 1'));
@@ -33,21 +42,23 @@ if (isset($_POST['add-cv'])) {
                 ("' . $user_id . '", "' . $_POST['skill-2'] . '", "' . $_POST['level-2'] . '"),
                 ("' . $user_id . '", "' . $_POST['skill-3'] . '", "' . $_POST['level-3'] . '")';
             if (mysqli_query($connect, $sql_skill) && mysqli_query($connect, $sql_edu) && mysqli_query($connect, $sql_exp)) {
-                echo "<script>alert('oke')</script>";
+                echo '<script>
+                        alert("Thêm cv thành công")
+                        window.open("index.php?page=home","_self")
+                    </script>';
             }
         }
     } else {
-        echo 'ddieen dur thong tin';
-        echo $_POST['image'];
+        echo '<script>alert("Bạn cần nhập đầy đủ thông tin")</script>';
     }
 }
 ?>
 
-<form class="container" method="POST">
+<form class="container" method="POST" enctype="multipart/form-data">
     <div class="row mb-3">
         <div class="col-6">
             <label for="image" class="form-label">Ảnh của bạn</label>
-            <input type="file" name="image" id="avatar" class="form-control">
+            <input type="file" name="image" id="avatar" class="form-control" accept="image/*">
         </div>
         <div class="col">
             <img src="" alt="" id="img">

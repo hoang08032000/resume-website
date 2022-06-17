@@ -3,7 +3,7 @@ include 'database.php';
 
 $list_cv = mysqli_query(
     $connect,
-    'SELECT * FROM `user`'
+    'SELECT * FROM `user` ORDER BY id DESC'
 );
 
 ?>

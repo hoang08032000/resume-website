@@ -1,7 +1,35 @@
+<?php
+include 'database.php';
+
+$user_id = $_GET['id'];
+echo $user_id;
+$sql = 'SELECT * FROM user WHERE id = "' . $user_id . '"';
+
+$user = mysqli_query($connect, $sql);
+
+$firstname = '';
+$lastname = '';
+$address = '';
+$email = '';
+$phone = '';
+// $dob = '';
+
+if (mysqli_num_rows($user) > 0) {
+    foreach ($user as $row) {
+        $firstname = $row['first_name'];
+        $lastname = $row['last_name'];
+        $address = $row['address'];
+        $phone = $row['phone'];
+        $email = $row['email'];
+    }
+}
+
+?>
+
 <header class="l-header">
     <nav class="nav bd-grid">
         <div>
-            <a href="#" class="nav__logo">Hoàng</a>
+            <a href="#" class="nav__logo"><?php echo $firstname . ' ' . $lastname ?></a>
         </div>
 
         <div class="nav__menu" id="nav-menu">
@@ -13,13 +41,6 @@
                 <!-- <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li> -->
             </ul>
         </div>
-        <!-- Sign out -->
-        <div>
-            <a href="index.php?page=signout">
-                <button  type="button" class="btn btn-primary">Sign out</button>
-            </a>
-        </div>
-
         <div class="nav__toggle" id="nav-toggle">
             <i class='bx bx-menu'></i>
         </div>
