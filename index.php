@@ -1,20 +1,4 @@
 <?php
-
-require_once realpath("vendor/autoload.php");
-
-use Dotenv\Dotenv;
-
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-$db_host = getenv('DB_HOST');
-$db_name = getenv('DB_NAME');
-$db_user = getenv('DB_USER');
-$db_password = getenv('DB_PASSWORD');
-
-
-echo $db_host;
-
 include("database.php");
 $page = '';
 $id = '';
