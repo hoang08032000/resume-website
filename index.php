@@ -4,7 +4,9 @@ $page = '';
 $id = '';
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
-    $id = $_GET['id'] ? $_GET['id'] : '';
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+    }
 }
 ?>
 
