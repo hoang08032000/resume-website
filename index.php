@@ -26,18 +26,20 @@ if (isset($_GET['page'])) {
 
 <body>
     <?php
-    if (($page == 'home' || !$page) && !$id) {
-        // include 'components/nav.php';
-        include 'components/home.php';
-    } else {
-        include 'components/nav.php';
-        include 'components/about.php';
-        include 'components/education.php';
-        include 'components/experience.php';
-        include 'components/skill.php';
-        include 'components/fotter.php';
+    if ($page == 'home' || !$page) {
+        if (!$id) {
+            include 'components/home.php';
+        } else {
+            include 'components/nav.php';
+            include 'components/about.php';
+            include 'components/education.php';
+            include 'components/experience.php';
+            include 'components/skill.php';
+            include 'components/fotter.php';
+        }
+    } else if ($page == 'send-mail') {
+        include 'components/send_mail.php';
     }
-
 
     ?>
 

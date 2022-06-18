@@ -41,7 +41,7 @@ if (mysqli_num_rows($user) > 0 && mysqli_num_rows($edu) > 0) {
     <div class="home__data">
         <h2 class="home__title">Xin chào,<br>Mình là <span class="home__title-color"><?php echo $lastname ?></span><br> Backend Developer </h2>
 
-        <a href="#" class="button">Mail me</a>
+        <a href="index.php?page=send-mail&id=<?php echo $user_id ?>" class="button">Mail me</a>
     </div>
 
     <div class="home__social">
