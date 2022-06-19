@@ -32,8 +32,6 @@ if (mysqli_num_rows($user) > 0 && mysqli_num_rows($edu) > 0) {
     }
 }
 
-
-
 ?>
 
 
